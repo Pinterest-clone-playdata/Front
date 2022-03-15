@@ -1,26 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//     return (
-//         <div className="App">
-//             <header className="App-header">
-//                 <img src={logo} className="App-logo" alt="logo" />
-//                 <p>
-//                     ㅇㅇEdit <code>src/App.js</code> and save to reload.
-//                 </p>
-//                 <a
-//                     className="App-link"
-//                     href="https://reactjs.org"
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                 >
-//                     Learn React
-//                 </a>
-//             </header>
-//         </div>
-//     );
-// }
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -39,6 +16,19 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+// function Copyright() {
+//     return (
+//         <Typography variant="body2" color="text.secondary" align="center">
+//             {'Copyright © '}
+//             <Link color="inherit" href="https://mui.com/">
+//                 Your Website
+//             </Link>{' '}
+//             {new Date().getFullYear()}
+//             {'.'}
+//         </Typography>
+//     );
+// }
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
@@ -48,8 +38,15 @@ export default function Album() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <AppBar position="relative">
+                {/* <Toolbar>
+                    <CameraIcon sx={{ mr: 2 }} />
+                    <Typography variant="h6" color="inherit" noWrap>
+                        핀터레스트 메인
+                    </Typography>
+                </Toolbar> */}
             </AppBar>
             <main>
+                {/* Hero unit */}
                 <Box
                     sx={{
                         bgcolor: 'background.paper',
@@ -93,6 +90,7 @@ export default function Album() {
                     </Container>
                 </Box>
                 <Container sx={{ py: 8 }} maxWidth="md">
+                    {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map((card) => (
                             <Grid item key={card} xs={12} sm={6} md={4}>
@@ -102,6 +100,7 @@ export default function Album() {
                                     <CardMedia
                                         component="img"
                                         sx={{
+                                            // 16:9
                                             pt: '56.25%',
                                         }}
                                         image="https://source.unsplash.com/random"
@@ -115,15 +114,32 @@ export default function Album() {
                                             핀터레스트 사진 설명
                                         </Typography>
                                     </CardContent>
-                                    {/* <CardActions>
-                                    </CardActions> */}
+                                    <CardActions>
+                                        {/* <Button size="small">View</Button>
+                                        <Button size="small">Edit</Button> */}
+                                    </CardActions>
                                 </Card>
                             </Grid>
                         ))}
                     </Grid>
                 </Container>
             </main>
-
+            {/* Footer */}
+            <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+                {/* <Typography variant="h6" align="center" gutterBottom>
+                    Footer
+                </Typography>
+                <Typography
+                    variant="subtitle1"
+                    align="center"
+                    color="text.secondary"
+                    component="p"
+                >
+                    Something here to give the footer a purpose!
+                </Typography> */}
+                {/* <Copyright /> */}
+            </Box>
+            {/* End footer */}
         </ThemeProvider>
     );
 }
